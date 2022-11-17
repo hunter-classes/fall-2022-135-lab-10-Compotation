@@ -46,7 +46,7 @@ std::string getMovie(const Movie &mv) {
 }
 
 std::string getTime(Time time) {
-  return std::to_string(time.h) + ":" + std::to_string(time.m);
+  return std::to_string(time.h) + ":" + (time.m == 0 ? "00" : std::to_string(time.m));
 }
 
 TimeSlot scheduleAfter(const TimeSlot &ts, Movie nextMovie) {

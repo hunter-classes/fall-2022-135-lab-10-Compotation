@@ -48,7 +48,7 @@ TEST_CASE("task c") {
   CHECK_EQ(getTimeSlot(morning), "Back to the Future COMEDY (116 min) [starts at 9:15, ends by 11:11]");
   CHECK_EQ(getTimeSlot(daytime), "Black Panther ACTION (134 min) [starts at 12:15, ends by 14:29]");
   CHECK_EQ(getTimeSlot(evening), "Black Panther ACTION (134 min) [starts at 16:45, ends by 18:59]");
-  CHECK_EQ(getTimeSlot(timeSlot1), "Black Panther: Wakanda Forever ACTION (161 min) [starts at 8:0, ends by 10:41]");
+  CHECK_EQ(getTimeSlot(timeSlot1), "Black Panther: Wakanda Forever ACTION (161 min) [starts at 8:00, ends by 10:41]");
   CHECK_EQ(getTimeSlot(timeSlot2), "Black Panther: Wakanda Forever ACTION (161 min) [starts at 20:30, ends by 23:11]");
 }
 
