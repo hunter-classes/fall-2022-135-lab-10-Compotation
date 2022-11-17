@@ -33,3 +33,21 @@ TEST_CASE("task b: add minutes") {
   Time t1111 = {11, 11};
   CHECK_EQ(addMinutes({9, 15}, 116), t1111);
 }
+
+TEST_CASE("task c") {
+  Movie movie1 = {"Back to the Future", COMEDY, 116};
+  Movie movie2 = {"Black Panther", ACTION, 134};
+  Movie wakanda = {"Black Panther: Wakanda Forever", ACTION, 161};
+
+  TimeSlot morning = {movie1, {9, 15}};
+  TimeSlot daytime = {movie2, {12, 15}};
+  TimeSlot evening = {movie2, {16, 45}};
+  TimeSlot timeSlot1 = {wakanda, {8, 0}};
+  TimeSlot timeSlot2 = {wakanda, {20, 30}};
+
+  CHECK_EQ(getTimeSlot(morning), "Back to the Future COMEDY (116 min) [starts at 9:15, ends by 11:11]");
+  CHECK_EQ(getTimeSlot(daytime), "Black Panther ACTION (134 min) [starts at 12:15, ends by 14:29]");
+  CHECK_EQ(getTimeSlot(evening), "Black Panther ACTION (134 min) [starts at 16:45, ends by 18:59]");
+  CHECK_EQ(getTimeSlot(timeSlot1), "Black Panther: Wakanda Forever ACTION (161 min) [starts at 8:0, ends by 10:41]");
+  CHECK_EQ(getTimeSlot(timeSlot2), "Black Panther: Wakanda Forever ACTION (161 min) [starts at 20:30, ends by 23:11]");
+}

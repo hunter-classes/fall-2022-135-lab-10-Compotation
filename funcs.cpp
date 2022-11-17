@@ -17,7 +17,8 @@ Time toTime(int min) {
 }
 
 std::string getTimeSlot(const TimeSlot &ts) {
-  return " [starts at " + getTime(ts.startTime) + ", ends by " + getTime(addMinutes(ts.startTime, ts.movie.duration));
+  return getMovie(ts.movie) + " [starts at " + getTime(ts.startTime) + ", ends by " +
+         getTime(addMinutes(ts.startTime, ts.movie.duration)) + "]";
 }
 
 std::string getMovie(const Movie &mv) {
