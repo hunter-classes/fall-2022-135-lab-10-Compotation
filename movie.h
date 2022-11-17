@@ -11,4 +11,8 @@ public:
   std::string title;
   Genre genre;
   int duration;
+
+  friend bool operator==(const Movie &lhs, const Movie &rhs) {
+    return lhs.title == rhs.title && lhs.genre == rhs.genre && lhs.duration == rhs.duration;
+  }
 };
