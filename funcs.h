@@ -16,3 +16,5 @@ std::string getTimeSlot(const TimeSlot &ts);
 std::string getMovie(const Movie &mv);
 
 std::string getTime(Time t);
+
+TimeSlot scheduleAfter(const TimeSlot &ts, Movie nextMovie);

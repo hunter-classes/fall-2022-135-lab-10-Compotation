@@ -2,6 +2,7 @@
 
 #include "movie.h"
 #include "time.h"
+#include "funcs.h"
 
 class TimeSlot {
 public:

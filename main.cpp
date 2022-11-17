@@ -23,7 +23,9 @@ int main() {
   TimeSlot timeSlot2 = {wakanda, {20, 30}};
 
   std::cout << getTimeSlot(morning) << "\n" << getTimeSlot(daytime) << "\n" << getTimeSlot(evening) << "\n"
-            << getTimeSlot(timeSlot1) << "\n" << getTimeSlot(timeSlot2) << "\n";
+            << getTimeSlot(timeSlot1) << "\n" << getTimeSlot(timeSlot2) << "\n\n";
 
+  std::cout << "schedule Wakanda after: " << getTimeSlot(morning) << "\n"
+            << getTimeSlot(scheduleAfter(morning, wakanda)) << "\n";
   return 0;
 }

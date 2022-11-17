@@ -51,3 +51,14 @@ TEST_CASE("task c") {
   CHECK_EQ(getTimeSlot(timeSlot1), "Black Panther: Wakanda Forever ACTION (161 min) [starts at 8:0, ends by 10:41]");
   CHECK_EQ(getTimeSlot(timeSlot2), "Black Panther: Wakanda Forever ACTION (161 min) [starts at 20:30, ends by 23:11]");
 }
+
+TEST_CASE("task d") {
+  Movie movie1 = {"Back to the Future", COMEDY, 116};
+  Movie wakanda = {"Black Panther: Wakanda Forever", ACTION, 161};
+  TimeSlot timeSlot1 = {wakanda, {8, 0}};
+  TimeSlot timeSlot2 = {wakanda, {10, 41}};
+  TimeSlot result1 = {movie1, {10, 41}};
+  TimeSlot result2 = {wakanda, {13, 22}};
+  CHECK_EQ(scheduleAfter(timeSlot1, movie1), result1);
+  CHECK_EQ(scheduleAfter(timeSlot2, wakanda), result2);
+}

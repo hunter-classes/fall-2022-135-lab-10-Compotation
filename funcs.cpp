@@ -1,5 +1,7 @@
 #include "funcs.h"
 
+#include <utility>
+
 int minutesSinceMidnight(Time time) {
   return time.h * 60 + time.m;
 }
@@ -45,4 +47,9 @@ std::string getMovie(const Movie &mv) {
 
 std::string getTime(Time time) {
   return std::to_string(time.h) + ":" + std::to_string(time.m);
+}
+
+TimeSlot scheduleAfter(const TimeSlot &ts, Movie nextMovie) {
+  TimeSlot result = {std::move(nextMovie), addMinutes(ts.startTime, ts.movie.duration)};
+  return result;
 }
