@@ -29,4 +29,7 @@ TEST_CASE("task b: add minutes") {
   Time t1320 = {13, 20};
   Time t1320Result = {13, 35};
   CHECK_EQ(addMinutes(t1320, 15), t1320Result);
+
+  Time t1111 = {11, 11};
+  CHECK_EQ(addMinutes({9, 15}, 116), t1111);
 }
