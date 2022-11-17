@@ -20,3 +20,13 @@ TEST_CASE("task a: minutes until") {
   Time t1030 = {10, 30};
   CHECK_EQ(minutesUntil(t1030, t1340), 190);
 }
+
+TEST_CASE("task b: add minutes") {
+  Time t0810 = {8, 10};
+  Time t0810Result = {9, 25};
+  CHECK_EQ(addMinutes(t0810, 75), t0810Result);
+
+  Time t1320 = {13, 20};
+  Time t1320Result = {13, 35};
+  CHECK_EQ(addMinutes(t1320, 15), t1320Result);
+}
