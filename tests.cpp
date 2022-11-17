@@ -62,3 +62,22 @@ TEST_CASE("task d") {
   CHECK_EQ(scheduleAfter(timeSlot1, movie1), result1);
   CHECK_EQ(scheduleAfter(timeSlot2, wakanda), result2);
 }
+
+TEST_CASE("task e") {
+  Movie movie1 = {"Back to the Future", COMEDY, 90};
+  TimeSlot timeSlot1 = {movie1, {10, 0}};
+  TimeSlot timeSlot2 = {movie1, {11, 30}};
+
+  CHECK_FALSE(timeOverlap(timeSlot1, timeSlot2));
+  CHECK_FALSE(timeOverlap(timeSlot2, timeSlot1));
+
+  TimeSlot timeSlot3 = {movie1, {11, 29}};
+  CHECK(timeOverlap(timeSlot3, timeSlot1));
+
+  TimeSlot timeSlot4 = {movie1, {12, 0}};
+  CHECK_FALSE(timeOverlap(timeSlot4, timeSlot1));
+
+  TimeSlot timeSlot5 = {movie1, {11, 59}};
+  TimeSlot timeSlot6 = {movie1, {13, 28}};
+  CHECK(timeOverlap(timeSlot5, timeSlot6));
+}

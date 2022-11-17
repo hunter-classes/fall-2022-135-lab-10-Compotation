@@ -18,3 +18,5 @@ std::string getMovie(const Movie &mv);
 std::string getTime(Time t);
 
 TimeSlot scheduleAfter(const TimeSlot &ts, Movie nextMovie);
+
+bool timeOverlap(const TimeSlot &ts1, const TimeSlot &ts2);

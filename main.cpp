@@ -27,5 +27,7 @@ int main() {
 
   std::cout << "schedule Wakanda after: " << getTimeSlot(morning) << "\n"
             << getTimeSlot(scheduleAfter(morning, wakanda)) << "\n";
+
+  std::cout << "is there overlap between timeSlot1 and morning: " << timeOverlap(timeSlot1, morning) << "\n";
   return 0;
 }

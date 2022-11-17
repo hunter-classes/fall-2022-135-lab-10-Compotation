@@ -53,3 +53,10 @@ TimeSlot scheduleAfter(const TimeSlot &ts, Movie nextMovie) {
   TimeSlot result = {std::move(nextMovie), addMinutes(ts.startTime, ts.movie.duration)};
   return result;
 }
+
+bool timeOverlap(const TimeSlot &ts1, const TimeSlot &ts2) {
+  if (minutesSinceMidnight(ts1.startTime) > minutesSinceMidnight(ts2.startTime)) {
+    return minutesUntil(addMinutes(ts2.startTime, ts2.movie.duration), ts1.startTime) < 0;
+  }
+  return minutesUntil(addMinutes(ts1.startTime, ts1.movie.duration), ts2.startTime) < 0;
+}
